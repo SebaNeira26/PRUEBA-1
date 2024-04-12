@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Página de Ventas</title>
+    <style>
+        body {
+            height: 60vh !important;
+            background: url(imagenes/diseñopagweb1.jpg) no-repeat;
+            background-size: cover; 
+        }
+        .Navbar {
+            background-color: #faf6f6;
+            overflow: hidden;
+        }
+        .Navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .logo {
+            background-color: #fcfcfc;
+            padding: 15px;
+            text-align: center;
+        }
+        .tittle {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .box-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .box {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .map {
+            text-align: center;
+        }
+        .center-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    </style>
+    <script>
+        // Crear un objeto 
+        var cart = {};
+
+        // Función para agregar un producto al carrito
+        function agregarCarrito(product, price) {
+            if (cart[product]) {
+                cart[product].quantity += 1;
+                cart[product].totalPrice += price;
+            } else {
+                cart[product] = { quantity: 1, totalPrice: price };
+            }
+            console.log(product + " añadido al carrito");
+        }
+
+        // Función para mostrar los productos en el carrito
+            function MostrarCarrito() {
+        console.log("Carrito de compras:");
+        for (var product in cart) {
+            console.log(product + ": " + cart[product].quantity + " total: $" + cart[product].totalPrice);
+        }
+    }   
+    var carrito = [];
+
+      function agregarCarrito(producto, precio) {
+       carrito.push({ producto: producto, precio: precio });
+
+      var listaCarrito = document.getElementById('listaCarrito');
+      var itemCarrito = document.createElement('li');
+      itemCarrito.textContent = producto + ': $' + precio;
+      listaCarrito.appendChild(itemCarrito);
+
+      var total = carrito.reduce(function(total, item) {
+        return total + item.precio;
+      }, 0);
+     //Funcion para mostrar el total de la venta
+      var totalCarrito = document.getElementById('totalCarrito');
+      totalCarrito.textContent = 'Total de la venta es: $' + total;
+      document.getElementById('botonLimpiarCarrito').addEventListener('click', function() {
+      document.getElementById('listaCarrito').innerHTML = '';
+      document.getElementById('totalCarrito').innerHTML = '';
+});  
+
+     document.getElementById('botonFinalizarCompra').addEventListener('click', function() {
+      window.location.href = 'finalizar_compra.html';
+});
+}
+    </script>
+</head>
+<body>
+    <section class="content sau">
+        <h2 class="tittle" style="color: #ffffff;">Productos</h2>
+        <div class="box-container">
+            <div class="product">
+                <h3 style="color: #ffffff;">Audifonos</h3>
+                <p style="color: #ffffff;">AF=AudiFonos</p>
+                <img src="imagenes/audifono1.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('AF1', 30000)">Añadir AF1 al carrito</button>
+                <img src="imagenes/audifono2.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('AF2', 40000)">Añadir AF2 al carrito</button>
+                <img src="imagenes/audifono3.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('AF3', 50000)">Añadir AF3 al carrito</button>
+            </div>
+
+            <div class="product">
+                <h3 style="color: #ffffff;">Teclado</h3>
+                <p style="color: #ffffff;">TL=TecLado</p>
+                <img src="imagenes/teclado1.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('TL1', 50000)">Añadir TL1 al carrito</button>
+                <img src="imagenes/teclado2.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('TL2', 60000)">Añadir TL2 al carrito</button>
+                <img src="imagenes/teclado3.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('TL3', 70000)">Añadir TL3 al carrito</button>
+
+            </div>
+            <div class="product">
+                <h3 style="color: #ffffff;">Mouse</h3>
+                <p style="color: #ffffff;">MS=MouSe</p>
+                <img src="imagenes/mouse1.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('MS1', 40000)">Añadir MS1 al carrito</button>
+                <img src="imagenes/mouse2.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('MS2', 50000)">Añadir MS2 al carrito</button>
+                <img src="imagenes/mouse3.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('MS3', 60000)">Añadir MS3 al carrito</button>
+
+            </div>
+            <div class="product">
+                <h3 style="color: #ffffff;">Mousepad</h3>
+                <p style="color: #ffffff;">MP=MousePad</p>
+                <img src="imagenes/mousepad1.jpg" class="d-block w-50" alt="...">
+                <button onclick="agregarCarrito('MP1', 10000)">Añadir MP1 al carrito</button>
+                <img src="imagenes/mousepad2.jpg" class="d-block w-50" alt="...">
+                <button onclick="agregarCarrito('MP2', 15000)">Añadir MP2 al carrito</button>
+                <img src="imagenes/mousepad3.jpg" class="d-block w-50" alt="...">
+                <button onclick="agregarCarrito('MP3', 20000)">Añadir MP3 al carrito</button>
+
+            </div>
+            <div class="product">
+                <h3 style="color: #ffffff;">Monitor</h3>
+                <p style="color: #ffffff;">MT=MoniTor</p>
+                <img src="imagenes/monitor1.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('MT1', 100000)">Añadir MT1 al carrito</button>
+                <img src="imagenes/monitor2.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('MT2', 150000)">Añadir MT2 al carrito</button>
+                <img src="imagenes/monitor3.jpg" class="d-block w-25" alt="...">
+                <button onclick="agregarCarrito('MT3', 200000)">Añadir MT3 al carrito</button>
+
+            </div>
+        </div>
+        <div class="center-content">
+            <ul style="color: #ffffff;" id="listaCarrito"></ul>
+            <p style="color: #ffffff;" id="totalCarrito"></p>
+            <button id="botonLimpiarCarrito">Limpiar Carrito</button>
+            <button id="botonFinalizarCompra">Finalizar Compra</button>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

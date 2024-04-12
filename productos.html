@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        body {
+            height: 60vh !important;
+            background: url(imagenes/diseñopagweb1.jpg) no-repeat;
+            background-size: cover; 
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            list-style-type: none;
+            padding: 0;
+        }
+        .product-item {
+            border: 1px solid #ccc;
+            padding: 1rem;
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #ffffff;">Lista de Productos A La Venta</h1>
+
+    <ul class="product-list">
+        <li style="color: #ffffff;"class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('AF1')">Audífonos AF1</h2>
+            <img id="productImageAF1" src="imagenes/audifono1.jpg"  alt="Imagen del producto ">
+            <p>
+              Audifono marca: LOGITECH
+            </p>
+            <p>Precio: $30.000</p>
+        </li>
+        <li style="color: #ffffff;"class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('AF2')">Audífono AF2</h2>
+            <img id="productImageAF2" src="imagenes/audifono2.jpg" alt="Imagen del producto">
+            <p>
+                Audifono marca: HP
+            </p>
+            <p>Precio: $40.000</p>
+        </li>
+        <li style="color: #ffffff;" class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('AF3')">Audífonos AF3</h2>
+            <img id="productImageAF3" src="imagenes/audifono3.jpg" alt="Imagen del producto">
+            <p> 
+                Audifono marca: CORSAIR
+            </p>
+            <p>Precio: $50.000</p>
+        </li>
+        <li style="color: #ffffff;" class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('TL1')">Teclado TL1</h2>
+            <img id="productImageTL1" src="imagenes/teclado1.jpg" alt="Imagen del producto">
+            <p>
+               Teclado marca: HP
+            </p>
+            <p>Precio: $50.000</p>
+        </li>
+        <li style="color: #ffffff;"  class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('TL2')">Teclado TL2</h2>
+            <img id="productImageTL2" src="imagenes/teclado2.jpg" alt="Imagen del producto">
+            <p>
+            Teclado marca: REDDRAGON
+            </p>
+            <p>Precio: $60.000</p>
+        </li>
+        <li style="color: #ffffff;" class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('TL3')">Teclado TL3</h2>
+            <img id="productImageTL3" src="imagenes/teclado3.jpg" alt="Imagen del producto">
+            <p>
+            Teclado marca: HYPER-X
+            </p>
+            <p>Precio: $70.000</p>
+        </li>
+        <li style="color: #ffffff;" class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('MS1')">Mouse MS1</h2>
+            <img id="productImageMS1" src="imagenes/mouse1.jpg" alt="Imagen del producto">
+            <p>
+             Mouse marca: LOGITECH
+            </p>
+            <p>Precio: $40.000</p>
+        </li>
+        <li style="color: #ffffff;" class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('MS2')">Mouse MS2</h2>
+            <img id="productImageMS2" src="imagenes/mouse2.jpg" alt="Imagen del producto">
+            <p>
+                Mouse marca: HYPER-X
+            </p>
+            <p>Precio: $50.000</p>
+        </li>
+        <li style="color: #ffffff;" class="product-item">
+            <h2 style="color: #ffffff;"onclick="mostrarProducto('MS3')">Mouse MS3</h2>
+            <img id="productImageMS3" src="imagenes/mouse3.jpg" alt="Imagen del producto">
+            <p>
+                Mouse marca: RAZER
+            </p>
+            <p>Precio: $60.000</p>
+        </li>
+        <li style="color: #ffffff;"class="product-item">
+            <h2 style="color: #ffffff;"onclick="mostrarProducto('MP1')">Mousepad MP1</h2>
+            <img id="productImageMP1" src="imagenes/mousepad1.jpg" alt="Imagen del producto">
+            <p>
+              Mousepad marca: THUNDEROBOT
+            </p>
+            <p>Precio: $40.000</p>
+        </li>
+        <li style="color: #ffffff;" class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('MP2')">Mousepad MP2</h2>
+            <img id="productImageMP2" src="imagenes/mousepad2.jpg" alt="Imagen del producto">
+            <p>
+                Mousepad marca: MONSTERMILD
+            </p>
+            <p>Precio: $50.000</p>
+        </li>
+        <li style="color: #ffffff;" class="product-item">
+            <h2 style="color: #ffffff;" onclick="mostrarProducto('MP3')">Mousepad MP3</h2>
+            <img id="productImageMP3" src="imagenes/mousepad3.jpg" alt="Imagen del producto">
+            <p>
+                Mousepad marca: RAZER
+            </p>
+            <p>Precio: $60.000</p>
+        </li>
+        <li style="color: #ffffff;"class="product-item">
+            <h2 style="color: #ffffff;"onclick="mostrarProducto('MT1')">Monitor MT1</h2>
+            <img id="productImageMT1" src="imagenes/monitor1.jpg" alt="Imagen del producto">
+            <p>
+                Monitor marca: ACER
+            </p>
+            <p>Precio: $100.000</p>
+        </li>
+        <li style="color: #ffffff;"class="product-item">
+            <h2 style="color: #ffffff;"onclick="mostrarProducto('MT2')">Monitor MT2</h2>
+            <img id="productImageMT2" src="imagenes/monitor2.jpg" alt="Imagen del producto">
+            <p>
+                Monitor marca: ASUS
+            </p>
+            <p>Precio: $150.000</p>
+        </li>
+        <li style="color: #ffffff;"class="product-item">
+            <h2 style="color: #ffffff;"onclick="mostrarProducto('MT3')">Monitor MT3</h2>
+            <img id="productImageMT3" src="imagenes/monitor3.jpg" alt="Imagen del producto">
+            <p>
+                Monitor marca: ASUS(PANTALLA CURVA)
+            </p>
+            <p>Precio: $200.000</p>
+        </li>
+    </ul>
+
+    <script>
+        function mostrarProducto(product) {
+            var ImagenProducto = document.getElementById('productImage' + product);
+            if (product === 'AF1') {
+                ImagenProducto.src = 'imagenes/audifono1.png';
+            } else if (product === 'AF2') {
+                ImagenProducto.src = 'imagenes/audifono2.jpg';
+            } else if (product === 'AF3') {
+                ImagenProducto.src = 'imagenes/audifono3.png';
+            } else if (product === 'TL1') {
+                ImagenProducto.src = 'imagenes/teclado1.jpg';
+            } else if (product === 'TL2') {
+                ImagenProducto.src = 'imagenes/teclado2.jpg';
+            } else if (product === 'TL3') {
+                ImagenProducto.src = 'imagenes/teclado3.jpg';
+            } else if (product === 'MS1') {
+                ImagenProducto.src = 'imagenes/mouse1.jpg';
+            } else if (product === 'MS2') {
+                ImagenProducto.src = 'imagenes/mouse2.jpg';
+            } else if (product === 'MS3') {
+                ImagenProducto.src = 'imagenes/mouse3.jpg';
+            } else if (product === 'MP1') {
+                ImagenProducto.src = 'imagenes/mousepad1.jpg';
+            } else if (product === 'MP2') {
+                ImagenProducto.src = 'imagenes/mousepad2.jpg';
+            } else if (product === 'MP3') {
+                ImagenProducto.src = 'imagenes/mousepad3.jpg';
+            } else if (product === 'MT1') {
+                ImagenProducto.src = 'imagenes/monitor1.jpg';
+            } else if (product === 'MT2') {
+                ImagenProducto.src = 'imagenes/monitor2.jpg';
+            } else if (product === 'MT3') {
+                ImagenProducto.src = 'imagenes/monitor3.jpg';
+            }
+        }
+    </script>
+</body>
+</html>
